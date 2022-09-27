@@ -148,18 +148,14 @@ const wordsUnique = [
 ];
 
 function uniquifyArray(arr) {
-  if (arr.length === 0){
-    return null;
-  };
-
-  const newArr = [];
+  if (arr.length === 0) return null;
+const newArr = [];
   for (let i = 0; i < arr.length; i++) {
       const element = arr[i] ;
-      if(newArr.includes(element) == false){
+      if(newArr.includes(element) == false)
         newArr.push(element);
-      };
-    return (newArr)
   };
+  return newArr
 };
 
 // Iteration #6: Find elements
@@ -233,7 +229,43 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() {}
+function greatestProduct(matrix) {
+const mh = [];
+const mv = [];
+const dim = matrix.length;
+let contador1 = 0;
+for (let i = 0; i <= dim - 4; i++) {
+  for (let j = 0; j <= dim - 4; j++) {
+    mh[contador1] = matrix[i][j] * matrix[i][j+1] * matrix[i][j+2] * matrix[i][j+3];
+    contador1++;
+  };
+};
+let contador2 = 0;
+for (let i = 0; i < dim -4; i++) {
+  for (let j = 0; j < dim - 4; j++) {
+    mv[contador2] = matrix[i][j] * matrix[i+1][j] * matrix[i+2][j] * matrix[i+3][j];
+    contador2++;
+  };
+};
+  let maxH = mh[0];
+  for (let i = 1; i < mh.length; i++) {
+    const element = array[i];
+    if (element > maxH) {
+      maxH = element;
+    };
+  };
+
+  let maxV = mv[0];
+  for (let i = 1; i < mv.length; i++) {
+    const element = array[i];
+    if (element > maxV) {
+      maxV = element;
+    };
+  };
+
+  if (maxH > maxV) return maxH;
+  return maxV
+};
 
 
 
