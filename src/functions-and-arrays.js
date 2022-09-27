@@ -23,7 +23,7 @@ let wordMax = arr[0]
 
 for (let i = 1; i < arr.length; i++) {
   const word= arr[i];
-  if(word.lenght > wordMax.lenght){
+  if(word.length > wordMax.length){
     wordMax = word;
   };
 };
@@ -151,6 +151,7 @@ function uniquifyArray(arr) {
   if (arr.length === 0){
     return null;
   };
+
   let newArr = [];
   for (let i = 0; i < arr.length; i++) {
     
@@ -197,7 +198,7 @@ function howManyTimes(arr, word) {
   };
   let count = 0;
   for (let i = 0; i < arr.length; i++) {
-    if (arr.includes(word)) {
+    if (arr[i] === word) {
       count++;
     };
   };
