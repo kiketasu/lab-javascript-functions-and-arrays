@@ -152,12 +152,14 @@ function uniquifyArray(arr) {
     return null;
   };
 
-  let newArr = [];
+  const newArr = [];
   for (let i = 0; i < arr.length; i++) {
-    
-    
-  }
-
+      const element = arr[i] ;
+      if(newArr.includes(element) == false){
+        newArr.push(element);
+      };
+    return (newArr)
+  };
 };
 
 // Iteration #6: Find elements
